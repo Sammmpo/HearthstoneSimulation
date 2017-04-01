@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hearthstone Simulator</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+  </head>
+  
+  
+  <body>
+  
+  <div class="bgimage">
+  <center>
+
+  <img src="images/Hearthstone_Logo.png" alt="HearthstoneLogo" style="width:593px;height:216px;">
+
+   <div class="flex-row">
+ 
+   
+  <div class="flex-col whitebg">
+ <br><header><h1>Management</h1></header>
+ <p><br></p>
+	<span class="textbold">COLLECTION</span>
+	<br><br>
+	
+	<div class="tt"><span class="text">Gold: </span><span id="gold">0</span><span class="ttt">Spend Gold on buying Packs or entering the Arena.</span></div>
+	<br>
+	<div class="tt"><span class="text">Dust: </span><span id="dust">0</span><span class="ttt">Spend Dust on crafting powerful Legendary cards.</span></div>
+	<br>
+	<div class="tt"><span class="text">Legendary Cards: </span><span id="legend">0</span><span class="ttt">Legendary cards increase your chance in winning Ranked matches (caps at 3).</span></div>
+	<br>
+	<div class="tt"><span class="text">Arena Knowledge: </span><span id="skill">0</span><span class="ttt">Arena Knowledge increases your chance in winning Arena matches (caps at 5).</span></div>
+	<br><br><br>
+	<span class="textbold">TIME</span>
+	<br><br>
+	<div class="tt"><span class="text">You can play today for </span><span id="hours">6</span><span> hours and </span><span id="minutes">0</span><span> minutes.</span>
+	<span class="ttt">You have 6 hours time to play Hearthstone each day.</span></div>
+	<br><br>
+	<div class="tt"><span class="text">The current Ranked Season ends in </span><span id="days">30</span><span> days.</span>
+	<span class="ttt">When the season ends, your rank is reset. You will be awarded bonus stars based on your ranking in the previous season.</span></div>
+	<br><br>
+	<div class="tt"><span id="monthsText" class="text">You have finished <span id="months">0</span><span> Ranked Seasons.</span></span>
+	<span class="ttt">Your Legendary Cards and Arena Knowledge might become worthless in the next season. Useless cards<br>are automatically<br>disenchanted for Dust.</span></div>
+	<br>
+	<br><br>
+	<span class="textbold">QUESTS</span>
+	<br><br>
+	<div class="tt"><span id="questtext">Daily Quest (50 Gold)<br>Play <span id="arenaQuest">0</span>/5 Arena Matches.</span><span class="ttt">Completing Daily Quests gets you some extra Gold.</span></div>
+	<br><br>
+	<img src="images/checkbox.png" id="box1" alt="checkbox" style="width:25px;height:25px;">
+	<img src="images/checkbox.png" id="box2" alt="checkbox" style="width:25px;height:25px;">
+	<img src="images/checkbox.png" id="box3" alt="checkbox" style="width:25px;height:25px;">
+	<br><br>
+	<span id="bonustext" class="text">Winning 3 matches in Ranked Play awards you 10 Gold.<br>This can be repeated 10 times a day.</span>
+	<br><br><br>
+	<span class="textbold">ACTIONS</span>
+	<br><br>
+	<div class="flex-row">
+	
+	<div class="flex-col whitebg">
+	<div class="tt">
+	<img src="images/pack.png" id="box1" alt="cardpack" style="width:56px;height:75px;">
+	<span class="ttt">Card Packs contain a random amount of Dust and a small chance of opening a Legendary Card.</span></div>
+	<p>Buy a Card Pack<br>(100 Gold)</p>
+	<button id="buyButton" class="locked" disabled>Go</button>
+	</div>
+	
+	<div class="flex-col whitebg">
+	<div class="tt">
+	<img src="images/patches.png" id="box1" alt="patches" style="width:56px;height:75px;"><span class="ttt">Legendary cards increase your chance in winning Ranked matches (caps at 3).</span></div>
+	<p>Craft a Legendary Card<br>(1600 Dust)</p><button id="craftButton" class="locked" disabled>Go</button>
+	</div>
+	
+	<div class="flex-col whitebg">
+	<div class="tt"><img src="images/kripp.png" id="box1" alt="kripparrian" style="width:75px;height:75px;"><span class="ttt">Kripparrian streams Hearthstone once a day.<br>He is known as a <i>preetty</i> good Arena player.</span></div>
+	<p><span>Learn from Kripparrian<br>(40 Minutes)</span></p><button id="guideButton">Go</button>
+	</div>
+	
+	</div>
+	<br><br>
+
+  </div>
+  
+  <div class="flex-col whitebg">
+  
+  <br><header><h1>Ranked</h1></header>
+	<p><br></p>
+    <span class="textbold">YOUR STATS</span>
+	<br><br>
+	<img id="rankicon" src="images/25.png" alt="Rank" style="width:100px;height:110px;"><br>
+	<img id="staricon1" src="images/starempty.png" alt="Star" style="width:20px;height:20px;"></span>
+	<img id="staricon2" src="images/starempty.png" alt="Star" style="width:20px;height:20px;"></span>
+	<img id="staricon3" class="hidden" src="images/starempty.png" alt="Star" style="width:20px;height:20px;"></span>
+	<img id="staricon4" class="hidden" src="images/starempty.png" alt="Star" style="width:20px;height:20px;"></span>
+	<img id="staricon5" class="hidden" src="images/starempty.png" alt="Star" style="width:20px;height:20px;"></span>
+	<br><br>
+	<div class="tt">
+	<span class="text">Rank: </span><span id="rank">25</span><span class="ttt">This is your rank. Can you make it to the Legend (0)?</span></div>
+	<br><br>
+	<div class="tt"><span class="text">Stars: </span><span id="stars">0</span><span class="ttt">Acquire stars by winning games in Ranked Play and increase your rank.</span></div>
+	<br><br>
+	<div class="tt"><span class="text">Winstreak: </span><span id="winstreak">0</span><span class="ttt">Reaching the Winstreak of 3 or more awards you bonus stars until the rank 5.</span></div>
+	<br><br><br><br>
+	<span class="text">Wins: </span><span id="wins">0</span>
+	<br><br>
+	<span class="text">Losses: </span><span id="losses">0</span>
+	<br><br>
+	<span class="text">Highest Rank: <span id="highest">25</span></span>
+	<br><br><br>
+	<div class="tt"><button class="big" id="playButton">Play</button><br><br>
+	<span class="text">You have <span id="chance">59</span>% chance to win.</span><span class="ttt">Click or press 'P' to play a game of Hearthstone!<br>(10-20 Minutes)</span></div>
+	<br><br>
+	<p id="results">&nbsp;</p>
+	
+	</div>
+	  
+  <div class="flex-col whitebg">
+   <br><header><h1>Arena</h1></header>
+   <p><br></p>
+   <div class="tt"><button id="arenaButton" class="locked" disabled>Enter the Arena</button><span class="ttt">Entering the Arena costs 150 Gold. Forge a deck from random cards and play for better rewards!</span></div>
+   <br><br><br><br>
+   <div id="arenaPanel" class="hidden2">
+	<span>Choose a Card</span><br><br><div class="tt">
+	<button id="option1">0</button>
+	<button id="option2">0</button>
+	<button id="option3">0</button>
+	<span class="ttt">These numbers correspond to the tier score of the cards.</span></div>
+	<br><br>
+	<span>Your Arena deck has <span id="amount">0</span>/30 cards</span>
+	<br><br>
+	<span>Deck Tier Score: <span id="deckScore">0</span>%</span>
+	<br><br><br><br>
+	<span>Wins: <span id="arenaWins">0</span></span>
+	<br><br>
+	<span>Losses: <span id="arenaLosses">0</span></span>
+	<br><br><br>
+	<div class="tt"><button id="playArenaButton" class="big locked" disabled>Play Arena</button><span class="ttt">Win 12 or lose 3 matches. One match takes<br>about 10-20 minutes.</span></div>
+	<br><br>
+	<span class="text">You have <span id="arenaWinChance">?</span>% chance to win.</span>
+	<br><br>
+	<p id="arenaResults">&nbsp;</p>
+	<br><div class="tt"><button id="doneButton" class="locked" disabled>Get Rewards</button><span class="ttt">Receive your Arena rewards after you've finished your run!</span></div>
+	</div>
+  </div>
+
+  </div>
+
+ 	<div class="gm"><div class="hidden2"><br>
+	<p>Developer Tools (for testing purposes)</p>
+	<button id="winButton">forceWin</button>
+	<button id="loseButton">forceLose</button>
+	<button id="clearWinstreak">zeroWinstreak</button>
+	<button id="updateButton">update</button>
+	<button id="timeButton">spendHours</button>
+	<button id="dayButton">spendDays</button>
+	<button id="goldButton">addGold</button>
+	<button id="powerButton">powerPlay</button>
+	</div><br><br><p>Reset the game by pressing "F5" or refreshing your browser.</p>
+	<br></div>
+	
+	<script src="js/main.js"></script>
+	<script src="bower_components/jquery/jquery.js"></script>
+	</center>
+	</div>
+  </body>
+
+</html>

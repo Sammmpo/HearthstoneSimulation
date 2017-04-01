@@ -1,0 +1,86 @@
+.whitebg {
+	background-color: #f2f2f2;
+}
+
+.gm {
+	background-color: #cccccc
+}
+
+header {
+	font-family: Arial;
+}
+
+.text {
+	font-family: Arial;
+}
+
+.strike {
+	text-decoration: line-through;
+}
+
+.textbold {
+	font-family: Arial;
+	font-weight: bold;
+}
+
+.correct {
+	color: green;
+}
+
+.wrong {
+	color: red;
+}
+
+.bgimage {
+    background-image: url('../images/Wallpaper.jpg');
+}
+
+.hidden {
+	display: none;
+}
+
+.hidden2 {
+	visibility: hidden;
+}
+
+.big {
+	font-size: 125%;
+}
+
+.locked {
+	color: #999999;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+   justify-content: space-between;
+}
+
+.flex-col {
+  flex: 1;
+}
+
+.tt {
+    position: relative;
+    display: inline-block;
+}
+.tt .ttt {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+	opacity: 0.75;
+    color: #fff;
+    text-align: center;
+    border-radius: 0px;
+    padding: 5px 5px;
+	top: -5px;
+	left: 105%;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.tt:hover .ttt {
+    visibility: visible;
+}
